@@ -1,12 +1,3 @@
-spring:
-  security:
-    user:
-      name: admin
-      password: admin
-
-server:
-  port: 5000
-
 security:
   basic:
     enable: false
@@ -16,25 +7,31 @@ security:
     header: Authorization
     prefix: Bearer
     expiration: 86400
-    secret: JwtSecretKey
+    secret: 333sektumsempraaladinabrakadabra333
+
+  security:
+    user:
+      name: admin
+      password: admin
+
 
 feign:
   client:
     config:
       default:
-        readTimeout: 1500
-        connectTimeout: 500
+        readTimeout: 15000
+        connectTimeout: 5000
 userData:
   service:
     base:
-      url: http://localhost:5020
+      url: ${USER_DATA_SERIVCE_URI:localhost:8080}
     name: userData
 
 eureka:
   client:
-    register-with-eureka: false
-    fetch-registry: false
+    register-with-eureka: true
+    fetch-registry: true
     service-url:
-      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+      defaultZone: ${EUREKA_URI:localhost:8687}
     instance:
-      hostname: ${HOSTNAME:localhost}
+      hostname: ${HOSTNAME:hivein-registry}
