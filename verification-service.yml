@@ -1,0 +1,49 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: ${DATABASE_USERNAME:sa}
+    password: ${DATABASE_PASSWORD:1234}
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${MAIL_USERNAME:chat.hivein@gmail.com}
+    password: ${MAIL_PASSWORD:cfhqzucqsffxtuly}
+    protocol: smtp
+    properties.mail.smtp:
+      auth: true
+      starttls.enable: true
+      ssl.trust: smtp.gmail.com
+
+site:
+  base:
+    url:
+      https: ${SITE_URL:https://hivein.herokuapp.com/}
+
+security:
+  jwt:
+    expiration: 3600
+    secret: ${JWT_SECRET:sekretnayabomba}
+
+feign:
+  client:
+    config:
+      default:
+        readTimeout: 15000
+        connectTimeout: 5000
+userData:
+  service:
+    base:
+      url: ${USER_DATA_SERVICE_URL:https://hivein-userdata.herokuapp.com}
+    name: ${USRR_DATA_SERVICE_NAME:userData}
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: ${EUREKA_URI:https://hivein-registry.herokuapp.com/eureka}
+    instance:
+      hostname: ${HOSTNAME:hivein-registry}
