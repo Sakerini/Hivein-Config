@@ -24,7 +24,7 @@ feign:
 userData:
   service:
     base:
-      url: ${USER_DATA_SERIVCE_URI:localhost:8081}
+      url: ${USER_DATA_SERIVCE_URI:https://hivein-userdata.herokuapp.com/}
     name: userData
 
 eureka:
