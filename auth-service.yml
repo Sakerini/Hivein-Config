@@ -1,18 +1,21 @@
+server:
+  port: 8080
+
 security:
   basic:
-    enable: false
+    enable:false
 
   jwt:
     uri: /auth/**
     header: Authorization
     prefix: Bearer
     expiration: 86400
-    secret: 333sektumsempraaladinabrakadabra333
+    secret: ${SECRET:pass}
 
   security:
     user:
-      name: admin
-      password: admin
+      name: ${SECURITY_ADMIN:admin}
+      password: ${SECURITY_ADMIN_PASSWORD:admin}
 
 
 feign:
@@ -24,7 +27,7 @@ feign:
 userData:
   service:
     base:
-      url: ${USER_DATA_SERIVCE_URI:localhost:8080}
+      url: ${USER_DATA_SERIVCE_URI:localhost:8081}
     name: userData
 
 eureka:
