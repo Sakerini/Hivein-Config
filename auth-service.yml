@@ -21,11 +21,11 @@ feign:
       default:
         readTimeout: 15000
         connectTimeout: 5000
-userdata-service:
+userdata:
   service:
     base:
       url: ${USER_DATA_SERIVCE_URI:https://hivein-userdata.herokuapp.com/}
-    name: userdata-service
+    name: userdata
 
 eureka:
   client:
