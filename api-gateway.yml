@@ -41,6 +41,8 @@ zuul:
       url: ${REGISTRATION:https://hivein-userdata.herokuapp.com/register}
     verify:
       url: ${VERIFICATION_SERVICE:https://hivein-verification.herokuapp.com/verify}
+    chat:
+      url: ${CHAT_SERVICE:https://hivein-chatservice.herokuapp.com}
   host:
     connect-timeout-millis: 30000
     socket-timeout-millis: 30000
