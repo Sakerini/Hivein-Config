@@ -1,13 +1,15 @@
-spring:
-  datasource:
-    url: ${DATASOURCE_URI:jdbc:postgresql://ec2-79-125-30-28.eu-west-1.compute.amazonaws.com:5432/d9gvv12sorgimq}
-    driver-class-name: org.postgresql.Driver
-    username: ${DB_USER:bohazwqjbovjwc}
-    password: ${DB_PASSWORD:01d0af31863a5f457bcfd4a913a3ca5bf521c2b58121045fb9e534757eafcf36}
-  jpa:
-    database-platform: org.hibernate.dialect.PostgreSQLDialect
-    show-sql: true
-
+feign:
+  client:
+    config:
+      default:
+        readTimeout: 15000
+        connectTimeout: 5000
+userData:
+  service:
+    base:
+      url: ${USER_DATA_SERVICE_URL:https://hivein-userdata.herokuapp.com}
+    name: ${USRR_DATA_SERVICE_NAME:userData}
+    
 eureka:
   client:
     register-with-eureka: true
