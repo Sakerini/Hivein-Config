@@ -7,14 +7,14 @@ feign:
 userData:
   service:
     base:
-      url: ${USER_DATA_SERVICE_URL:https://hivein-userdata.herokuapp.com}
-    name: ${USRR_DATA_SERVICE_NAME:userData}
+      url: ${USER_DATA_SERVICE_URL}
+    name: ${USRR_DATA_SERVICE_NAME}
     
 eureka:
   client:
     register-with-eureka: true
     fetch-registry: true
     service-url:
-      defaultZone: ${EUREKA_URI:https://hivein-registry.herokuapp.com/eureka}
+      defaultZone: ${EUREKA_URI:https}
     instance:
-      hostname: ${HOSTNAME:hivein-registry}
+      hostname: ${HOSTNAME}

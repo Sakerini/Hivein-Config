@@ -1,17 +1,17 @@
 spring:
   datasource:
-    url: ${DATASOURCE_URI:jdbc:postgresql://ec2-79-125-30-28.eu-west-1.compute.amazonaws.com:5432/d9gvv12sorgimq}
+    url: ${DATASOURCE_URI}
     driver-class-name: org.postgresql.Driver
-    username: ${DB_USER:bohazwqjbovjwc}
-    password: ${DB_PASSWORD:01d0af31863a5f457bcfd4a913a3ca5bf521c2b58121045fb9e534757eafcf36}
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     show-sql: true
 
   security:
     user:
-      name: ${SECURITY_NAME:admin}
-      password: ${SECURITY_PASS:admin}
+      name: ${SECURITY_NAME}
+      password: ${SECURITY_PASS}
 
 feign:
   client:
@@ -22,14 +22,14 @@ feign:
 verificationService:
   service:
     base:
-      url: ${VERIFICATION_URL:https://hivein-verification.herokuapp.com}
-    name: ${VERIFICATION_NAME:verificationService}
+      url: ${VERIFICATION_URL}
+    name: ${VERIFICATION_NAME}
 
 eureka:
   client:
     register-with-eureka: true
     fetch-registry: true
     service-url:
-      defaultZone: ${EUREKA_URI:https://hivein-registry.herokuapp.com/eureka}
+      defaultZone: ${EUREKA_URI}
     instance:
-      hostname: ${HOSTNAME:hivein-registry}
+      hostname: ${HOSTNAME}

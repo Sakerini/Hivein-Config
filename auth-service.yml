@@ -11,8 +11,8 @@ security:
 
   security:
     user:
-      name: ${SECURITY_ADMIN:admin}
-      password: ${SECURITY_ADMIN_PASSWORD:admin}
+      name: ${SECURITY_ADMIN}
+      password: ${SECURITY_ADMIN_PASSWORD}
 
 
 feign:
@@ -24,7 +24,7 @@ feign:
 userdata:
   service:
     base:
-      url: ${USER_DATA_SERIVCE_URI:https://hivein-userdata.herokuapp.com/}
+      url: ${USER_DATA_SERIVCE_URI}
     name: userdata
 
 eureka:
@@ -32,6 +32,6 @@ eureka:
     register-with-eureka: true
     fetch-registry: true
     service-url:
-      defaultZone: ${EUREKA_URI:https://hivein-registry.herokuapp.com/eureka}
+      defaultZone: ${EUREKA_URI}
     instance:
-      hostname: ${HOSTNAME:hivein-registry}
+      hostname: ${HOSTNAME}
